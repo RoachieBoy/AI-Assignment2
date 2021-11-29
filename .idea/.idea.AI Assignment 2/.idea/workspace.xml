@@ -6,14 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6078694a-76d5-4eb6-bb38-50654e9ece11" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.AI Assignment 2/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.AI Assignment 2/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BinaryQuestionsV2/BTNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BinaryQuestionsV2/BTree.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BinaryQuestionsV2/BinaryQuestionsV2.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BinaryQuestionsV2/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI Assignment 2.sln" beforeDir="false" afterPath="$PROJECT_DIR$/AI Assignment 2.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BinaryQuestionsV2/Game.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BinaryQuestionsV2/InputHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BinaryQuestionsV2/SaveManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AI Assignment 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AI Assignment 2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryQuestions/BTNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestions/BTNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV2/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV2/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +86,17 @@
       <updated>1638199924240</updated>
       <workItem from="1638199930418" duration="15000" />
       <workItem from="1638199956607" duration="5000" />
-      <workItem from="1638199983774" duration="1765000" />
+      <workItem from="1638199983774" duration="4566000" />
+      <workItem from="1638208632115" duration="1772000" />
     </task>
+    <task id="LOCAL-00001" summary="New type agnostic Tree and Nodes &#10;&#10;Based on: https://github.com/TheAlgorithms/C-Sharp">
+      <created>1638201882761</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638201882761</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,5 +120,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="New type agnostic Tree and Nodes &#10;&#10;Based on: https://github.com/TheAlgorithms/C-Sharp" />
+    <option name="LAST_COMMIT_MESSAGE" value="New type agnostic Tree and Nodes &#10;&#10;Based on: https://github.com/TheAlgorithms/C-Sharp" />
   </component>
 </project>

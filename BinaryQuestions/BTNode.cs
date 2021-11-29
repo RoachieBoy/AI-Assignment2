@@ -28,11 +28,13 @@ namespace BinaryQuestions
             {
                 Console.WriteLine("That was the last question. You win!");
             }
-            else if (IsQuestion())
+            else if (_noNode is not null && _yesNode is not null)
             {
                 Console.WriteLine(q + ") " + _message);
                 Console.Write("Enter 'y' for yes and 'n' for no: ");
+                
                 var input = GetYesOrNo(); //y or n
+                
                 if (input == 'y')
                     _yesNode.Query(q + 1);
                 else
@@ -48,7 +50,9 @@ namespace BinaryQuestions
         {
             Console.WriteLine(q + ") Are you thinking of a(n) " + _message + "? ");
             Console.Write("Enter 'y' for yes and 'n' for no: ");
+            
             var input = GetYesOrNo(); //y or n
+            
             if (input == 'y')
                 Console.Write("I Win!\n");
             else
@@ -78,13 +82,6 @@ namespace BinaryQuestions
 
             Console.Write("Thank you! My knowledge has been increased");
             SetMessage(userQuestion);
-        }
-
-        public bool IsQuestion()
-        {
-            if (_noNode == null && _yesNode == null)
-                return false;
-            return true;
         }
 
         /**
