@@ -4,7 +4,7 @@ using System.Linq;
 namespace BinaryQuestions
 {
     [Serializable]
-    internal class BtNode
+    public class BtNode
     {
         private string _message;
         private BtNode _noNode;
@@ -34,12 +34,14 @@ namespace BinaryQuestions
                 Console.Write("Enter 'y' for yes and 'n' for no: ");
                 var input = GetYesOrNo(); //y or n
                 if (input == 'y')
-                    _yesNode.Query(q+1);
+                    _yesNode.Query(q + 1);
                 else
-                    _noNode.Query(q+1);
+                    _noNode.Query(q + 1);
             }
             else
+            {
                 OnQueryObject(q);
+            }
         }
 
         public void OnQueryObject(int q)
@@ -58,10 +60,10 @@ namespace BinaryQuestions
             Console.Write("You win! What were you thinking of? ");
             var userObject = Console.ReadLine();
             Console.Write("Please enter a question to distinguish a(n) "
-                + _message + " from " + userObject + ": ");
+                          + _message + " from " + userObject + ": ");
             var userQuestion = Console.ReadLine();
             Console.Write("If you were thinking of a(n) " + userObject
-                + ", what would the answer to that question be (\'yes\' or \'no\')? ");
+                                                          + ", what would the answer to that question be (\'yes\' or \'no\')? ");
             var input = GetYesOrNo(); //y or n
             if (input == 'y')
             {
@@ -73,6 +75,7 @@ namespace BinaryQuestions
                 _yesNode = new BtNode(_message);
                 _noNode = new BtNode(userObject);
             }
+
             Console.Write("Thank you! My knowledge has been increased");
             SetMessage(userQuestion);
         }
@@ -96,6 +99,7 @@ namespace BinaryQuestions
                 inputCharacter = Console.ReadLine().ElementAt(0);
                 inputCharacter = char.ToLower(inputCharacter);
             }
+
             return inputCharacter;
         }
 

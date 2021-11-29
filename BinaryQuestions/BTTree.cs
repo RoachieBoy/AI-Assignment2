@@ -22,9 +22,9 @@ namespace BinaryQuestions
         public BtTree()
         {
             var formatter = new BinaryFormatter();
-            
+
             using var stream = File.OpenRead("serialized.bin");
-            
+
             _rootNode = (BtNode)formatter.Deserialize(stream);
         }
 
@@ -39,9 +39,9 @@ namespace BinaryQuestions
         public void SaveQuestionTree()
         {
             var formatter = new BinaryFormatter();
-            
+
             using var stream = File.Create("serialized.bin");
-            
+
             formatter.Serialize(stream, _rootNode);
         }
     }
