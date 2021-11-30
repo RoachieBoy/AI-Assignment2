@@ -6,21 +6,34 @@ namespace BinaryQuestions
     [Serializable]
     public class BtNode
     {
-        private string _message;
-        private BtNode _noNode;
-        private BtNode _yesNode;
+        private string? _message;
+        private BtNode? _noNode;
+        private BtNode? _yesNode;
 
         /**
          * Constructor for the nodes: This class holds an String representing 
          * an object if the noNode and yesNode are null and a question if the
          * yesNode and noNode point to a BTNode.
          */
-        public BtNode(string nodeMessage)
+        public BtNode(string? nodeMessage)
         {
             _message = nodeMessage;
             _noNode = null;
             _yesNode = null;
         }
+
+        public int GetEvaluation()
+        {
+            var evaluation = 0;
+            char[] messageCharacters = _message.ToCharArray();
+
+            foreach (var character in messageCharacters)
+                if (char.IsLetter(character))
+                    evaluation++;
+
+            return evaluation;
+        }
+
 
         public void Query(int q)
         {
@@ -32,9 +45,9 @@ namespace BinaryQuestions
             {
                 Console.WriteLine(q + ") " + _message);
                 Console.Write("Enter 'y' for yes and 'n' for no: ");
-                
+
                 var input = GetYesOrNo(); //y or n
-                
+
                 if (input == 'y')
                     _yesNode.Query(q + 1);
                 else
@@ -50,9 +63,9 @@ namespace BinaryQuestions
         {
             Console.WriteLine(q + ") Are you thinking of a(n) " + _message + "? ");
             Console.Write("Enter 'y' for yes and 'n' for no: ");
-            
+
             var input = GetYesOrNo(); //y or n
-            
+
             if (input == 'y')
                 Console.Write("I Win!\n");
             else
@@ -101,32 +114,32 @@ namespace BinaryQuestions
         }
 
         //Mutator Methods
-        public void SetMessage(string nodeMessage)
+        public void SetMessage(string? nodeMessage)
         {
             _message = nodeMessage;
         }
 
-        public string GetMessage()
+        public string? GetMessage()
         {
             return _message;
         }
 
-        public void SetNoNode(BtNode node)
+        public void SetNoNode(BtNode? node)
         {
             _noNode = node;
         }
 
-        public BtNode GetNoNode()
+        public BtNode? GetNoNode()
         {
             return _noNode;
         }
 
-        public void SetYesNode(BtNode node)
+        public void SetYesNode(BtNode? node)
         {
             _yesNode = node;
         }
 
-        public BtNode GetYesNode()
+        public BtNode? GetYesNode()
         {
             return _yesNode;
         }

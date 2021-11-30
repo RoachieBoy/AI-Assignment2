@@ -314,7 +314,7 @@ namespace BinaryQuestionsV2
         {
             if (node is null) return new List<TKey>();
 
-            var result = new List<TKey> { node.Key };
+            var result = new List<TKey> {node.Key};
 
             result.AddRange(GetKeysPreOrder(node.Left));
             result.AddRange(GetKeysPreOrder(node.Right));

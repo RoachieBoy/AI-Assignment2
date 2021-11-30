@@ -25,12 +25,9 @@ namespace BinaryQuestionsV2
                 IsRunning = true;
             }
 
-            var game = new Game { CurrentGameData = _currentGameData };
+            var game = new Game {CurrentGameData = _currentGameData};
 
-            while (IsRunning)
-            {
-                game.Update();
-            }
+            while (IsRunning) game.Update();
         }
     }
 }
