@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿global using System;
+global using System.IO;
+using BinaryQuestionsV2.BaseEngine;
+using BinaryQuestionsV2.BinaryTreeDataStructure;
 
 namespace BinaryQuestionsV2
 {
@@ -6,28 +9,42 @@ namespace BinaryQuestionsV2
     {
         private const string FileName = "gameData.json";
 
-        public static bool IsRunning;
-
-        private static BTree<string>? _currentGameData;
+        private static bool _isRunning;
 
         private static void Main()
         {
-            if (File.Exists(FileName))
+            var game = StartGame();
+
+            while (_isRunning)
             {
-                _currentGameData = SaveManager.LoadGame(FileName);
-
-                IsRunning = true;
+                game.Update();
             }
-            else
-            {
-                _currentGameData = SaveManager.StartNewGame();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="currentGameData"></param>
+        public static void QuitGame(BTree<string> currentGameData)
+        {
+            _isRunning = false;
 
-                IsRunning = true;
-            }
+            SaveManager.SaveGame(currentGameData, FileName);
+        }
 
-            var game = new Game {CurrentGameData = _currentGameData};
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static Game StartGame()
+        {
+            _isRunning = true;
+            
+            return new Game(TryLoadGame());
+        }
 
-            while (IsRunning) game.Update();
+        private static BTree<string> TryLoadGame()
+        {
+            return File.Exists(FileName) ? SaveManager.LoadGame(FileName) : SaveManager.StartNewGame();
         }
     }
 }

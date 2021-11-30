@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace BinaryQuestionsV2
+namespace BinaryQuestionsV2.BinaryTreeDataStructure
 {
     /// <summary>
     ///     An ordered tree with efficient insertion, removal, and lookup.

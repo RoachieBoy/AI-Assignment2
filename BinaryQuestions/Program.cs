@@ -19,7 +19,6 @@ namespace BinaryQuestions
                 PrintOrder();
             }
             else
-
                 StartNewGame();
 
             Console.WriteLine("\nStarting the \"20 Binary Questions\" Game!\nThink of an object, person or animal.");
@@ -102,7 +101,7 @@ namespace BinaryQuestions
             if (!PassedNodes.Contains(node))
             {
                 PassedNodes.Add(node);
-                Console.WriteLine(node?.GetMessage() + ", Evaluation = " + node.GetEvaluation());
+                Console.WriteLine(node?.GetMessage() + ", Evaluation = " + node?.GetEvaluation());
                 PrintInOrder(node);
             }
 

@@ -1,4 +1,4 @@
-﻿namespace BinaryQuestionsV2
+﻿namespace BinaryQuestionsV2.BinaryTreeDataStructure
 {
     /// <summary>
     ///     Generic node class for BinarySearchTree.

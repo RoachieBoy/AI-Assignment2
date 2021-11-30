@@ -1,8 +1,7 @@
-﻿using System;
-using System.IO;
-using System.Text.Json;
+﻿using System.Text.Json;
+using BinaryQuestionsV2.BinaryTreeDataStructure;
 
-namespace BinaryQuestionsV2
+namespace BinaryQuestionsV2.BaseEngine
 {
     public static class SaveManager
     {
@@ -36,12 +35,12 @@ namespace BinaryQuestionsV2
 
                 return gameData;
             }
-            catch (Exception e)
+            catch (Exception unused)
             {
                 Console.WriteLine("The game data seems to be corrupted...\n\nCreating new game...");
+                
+                return StartNewGame();
             }
-
-            return StartNewGame();
         }
 
         /// <summary>
