@@ -75,9 +75,13 @@ namespace BinaryQuestions
             }
 
             if (node?.GetYesNode() == null) return;
+            
             if (PassedNodes.Contains(node.GetYesNode())) return;
+            
             PassedNodes.Add(node.GetYesNode());
+            
             Console.WriteLine(node.GetYesNode()?.GetMessage());
+            
             PrintPreOrder(node.GetYesNode());
         }
         
@@ -135,7 +139,9 @@ namespace BinaryQuestions
             if (!PassedNodes.Contains(node))
             {
                 PassedNodes.Add(node);
+                
                 Console.WriteLine(node?.GetMessage());
+                
                 PrintPostOrder(node);
             }
         }
