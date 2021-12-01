@@ -79,8 +79,7 @@ namespace BinaryQuestions
             Console.Write("Please enter a question to distinguish a(n) "
                           + _message + " from " + userObject + ": ");
             var userQuestion = Console.ReadLine();
-            Console.Write("If you were thinking of a(n) " + userObject
-                                                          + ", what would the answer to that question be (\'yes\' or \'no\')? ");
+            Console.Write("If you were thinking of a(n) " + userObject + ", what would the answer to that question be (\'yes\' or \'no\')? ");
             var input = GetYesOrNo(); //y or n
             if (input == 'y')
             {

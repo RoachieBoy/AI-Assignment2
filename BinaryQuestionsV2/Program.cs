@@ -9,16 +9,13 @@ namespace BinaryQuestionsV2
     {
         private const string FileName = "gameData.json";
 
-        private static bool _isRunning;
-
+        // Made a slight mistake, so, later
+        
         private static void Main()
         {
             var game = StartGame();
-
-            while (_isRunning)
-            {
-                game.Update();
-            }
+            
+            game.Update();
         }
         /// <summary>
         /// 
@@ -26,8 +23,6 @@ namespace BinaryQuestionsV2
         /// <param name="currentGameData"></param>
         public static void QuitGame(BTree<string> currentGameData)
         {
-            _isRunning = false;
-
             SaveManager.SaveGame(currentGameData, FileName);
         }
 
@@ -37,8 +32,6 @@ namespace BinaryQuestionsV2
         /// <returns></returns>
         public static Game StartGame()
         {
-            _isRunning = true;
-            
             return new Game(TryLoadGame());
         }
 
