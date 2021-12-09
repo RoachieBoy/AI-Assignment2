@@ -1,12 +1,11 @@
-﻿namespace BinaryQuestionsV2.BaseEngine
-{
-    public static class InputHandler
-    {
-        public static bool CheckInput(ConsoleKey keyToCheck)
-        {
-            var input = Console.ReadKey();
+﻿namespace BinaryQuestionsV2.BaseEngine;
 
-            return input.Key == keyToCheck;
-        }
+public static class InputHandler
+{
+    public static bool CheckInput(ConsoleKey keyToCheck)
+    {
+        var input = Console.ReadKey();
+
+        return input.Key == keyToCheck;
     }
 }

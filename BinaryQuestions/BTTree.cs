@@ -1,48 +1,45 @@
-﻿using System;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+﻿using System.Runtime.Serialization.Formatters.Binary;
 
-namespace BinaryQuestions
+namespace BinaryQuestions;
+
+[Serializable]
+internal class BtTree
 {
-    [Serializable]
-    internal class BtTree
+    public BtTree(string? question, string? yesGuess, string? noGuess)
     {
-        public BtTree(string? question, string? yesGuess, string? noGuess)
-        {
-            GetRootNode = new BtNode(question);
-            GetRootNode.SetYesNode(new BtNode(yesGuess));
-            GetRootNode.SetNoNode(new BtNode(noGuess));
+        GetRootNode = new BtNode(question);
+        GetRootNode.SetYesNode(new BtNode(yesGuess));
+        GetRootNode.SetNoNode(new BtNode(noGuess));
 
-            //Serialize the object on creation
-            SaveQuestionTree();
-        }
+        //Serialize the object on creation
+        SaveQuestionTree();
+    }
 
-        public BtTree()
-        {
-            var formatter = new BinaryFormatter();
+    public BtTree()
+    {
+        var formatter = new BinaryFormatter();
 
-            using var stream = File.OpenRead("serialized.bin");
+        using var stream = File.OpenRead("serialized.bin");
 
-            GetRootNode = (BtNode) formatter.Deserialize(stream);
-        }
+        GetRootNode = (BtNode) formatter.Deserialize(stream);
+    }
 
-        public BtNode? GetRootNode { get; }
+    public BtNode? GetRootNode { get; }
 
-        public void Query()
-        {
-            GetRootNode.Query(1);
+    public void Query()
+    {
+        GetRootNode.Query(1);
 
-            //We're at the end of the game now, so we'll save the tree in case the user added new data
-            SaveQuestionTree();
-        }
+        //We're at the end of the game now, so we'll save the tree in case the user added new data
+        SaveQuestionTree();
+    }
 
-        public void SaveQuestionTree()
-        {
-            var formatter = new BinaryFormatter();
+    public void SaveQuestionTree()
+    {
+        var formatter = new BinaryFormatter();
 
-            using var stream = File.Create("serialized.bin");
+        using var stream = File.Create("serialized.bin");
 
-            formatter.Serialize(stream, GetRootNode);
-        }
+        formatter.Serialize(stream, GetRootNode);
     }
 }
