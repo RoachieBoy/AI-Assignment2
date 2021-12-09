@@ -5,13 +5,9 @@
     <projectFile>BinaryQuestions/BinaryQuestions.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6078694a-76d5-4eb6-bb38-50654e9ece11" name="Changes" comment="Added some new methods for quitting and starting, little clean-up">
-      <change beforePath="$PROJECT_DIR$/BinaryQuestions/BTNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestions/BTNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestions/BTTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestions/BTTree.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestions/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestions/Program.cs" afterDir="false" />
+    <list default="true" id="6078694a-76d5-4eb6-bb38-50654e9ece11" name="Changes" comment="Clean up .net6">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AI Assignment 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AI Assignment 2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryQuestionsV2/BaseEngine/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV2/BaseEngine/InputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV2/BaseEngine/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV2/BaseEngine/SaveManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV2/BinaryTreeDataStructure/BTNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV2/BinaryTreeDataStructure/BTNode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryQuestionsV2/BinaryTreeDataStructure/BTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV2/BinaryTreeDataStructure/BTree.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryQuestionsV2/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV2/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryQuestionsV2/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV2/Program.cs" afterDir="false" />
@@ -31,6 +27,10 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63e5fabb426c406cb30992dab6a9175131a00/b1/6f8e5886/Console.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/winand/Repositories/AI-Assignment2/BinaryQuestions/BTNode.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -108,7 +108,7 @@
       <workItem from="1638288924775" duration="631000" />
       <workItem from="1638300125343" duration="2147000" />
       <workItem from="1638309005095" duration="7758000" />
-      <workItem from="1639055699097" duration="81000" />
+      <workItem from="1639055699097" duration="1979000" />
     </task>
     <task id="LOCAL-00001" summary="New type agnostic Tree and Nodes &#10;&#10;Based on: https://github.com/TheAlgorithms/C-Sharp">
       <created>1638201882761</created>
@@ -124,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638313008387</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Clean up .net6">
+      <created>1639055862521</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639055862521</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +156,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="New type agnostic Tree and Nodes &#10;&#10;Based on: https://github.com/TheAlgorithms/C-Sharp" />
     <MESSAGE value="Added some new methods for quitting and starting, little clean-up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some new methods for quitting and starting, little clean-up" />
+    <MESSAGE value="Clean up .net6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean up .net6" />
   </component>
 </project>

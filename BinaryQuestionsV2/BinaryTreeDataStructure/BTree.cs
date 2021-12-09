@@ -25,6 +25,8 @@ public class BTree<TKey>
     /// </summary>
     private BtNode<TKey>? _root;
 
+    public BtNode<TKey>? Root => _root;
+
     public BTree()
     {
         _root = null;
@@ -163,29 +165,27 @@ public class BTree<TKey>
     {
         var compareResult = _comparer.Compare(node.Key, key);
 
-        switch (compareResult)
+        if (compareResult > 0 && node.Left is not null)
         {
-            case > 0 when node.Left is not null:
-                Add(node.Left, key);
-                break;
-            case > 0:
-            {
-                var newNode = new BtNode<TKey>(key);
-                node.Left = newNode;
-                break;
-            }
-            case < 0 when node.Right is not null:
-                Add(node.Right, key);
-                break;
-            case < 0:
-            {
-                var newNode = new BtNode<TKey>(key);
-                node.Right = newNode;
-                break;
-            }
-            // Key is already in tree.
-            default:
-                throw new ArgumentException($"Key \"{key}\" already exists in tree!");
+            Add(node.Left, key);
+        }
+        else if (compareResult > 0)
+        {
+            var newNode = new BtNode<TKey>(key);
+            node.Left = newNode;
+        }
+        else if (compareResult < 0 && node.Right is not null)
+        {
+            Add(node.Right, key);
+        }
+        else if (compareResult < 0)
+        {
+            var newNode = new BtNode<TKey>(key);
+            node.Right = newNode;
+        }
+        else
+        {
+            throw new ArgumentException($"Key \"{key}\" already exists in tree!");
         }
     }
 

@@ -13,7 +13,7 @@ internal static class Program
     {
         var game = StartGame();
             
-        game.Update();
+        game.Run();
     }
     /// <summary>
     /// 
