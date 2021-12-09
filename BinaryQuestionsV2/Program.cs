@@ -12,11 +12,11 @@ internal static class Program
     private static void Main()
     {
         var game = StartGame();
-            
+
         game.Run();
     }
+
     /// <summary>
-    /// 
     /// </summary>
     /// <param name="currentGameData"></param>
     public static void QuitGame(BTree<string> currentGameData)
@@ -25,7 +25,6 @@ internal static class Program
     }
 
     /// <summary>
-    /// 
     /// </summary>
     /// <returns></returns>
     public static Game StartGame()

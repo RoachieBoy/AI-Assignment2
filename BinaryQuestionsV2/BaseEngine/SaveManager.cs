@@ -38,7 +38,7 @@ public static class SaveManager
         catch (Exception unused)
         {
             Console.WriteLine("The game data seems to be corrupted...\n\nCreating new game...");
-                
+
             return StartNewGame();
         }
     }
@@ -50,7 +50,7 @@ public static class SaveManager
     /// <param name="formatted"></param>
     public static void SaveGame(BTree<string> gameData, string fileName, bool formatted = true)
     {
-        var options = new JsonSerializerOptions {WriteIndented = formatted};
+        var options = new JsonSerializerOptions { WriteIndented = formatted };
 
         var jsonString = JsonSerializer.Serialize(gameData, options);
 

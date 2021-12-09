@@ -20,26 +20,24 @@ public class BTree<TKey>
     /// </summary>
     private readonly Comparer<TKey> _comparer;
 
-    /// <summary>
-    ///     The root of the BST.
-    /// </summary>
-    private BtNode<TKey>? _root;
-
-    public BtNode<TKey>? Root => _root;
-
     public BTree()
     {
-        _root = null;
+        Root = null;
         Count = 0;
         _comparer = Comparer<TKey>.Default;
     }
 
     public BTree(Comparer<TKey> customComparer)
     {
-        _root = null;
+        Root = null;
         Count = 0;
         _comparer = customComparer;
     }
+
+    /// <summary>
+    ///     The root of the BST.
+    /// </summary>
+    public BtNode<TKey>? Root { get; private set; }
 
     /// <summary>
     ///     Gets the number nodes currently in the BST.
@@ -55,10 +53,10 @@ public class BTree<TKey>
     /// </exception>
     public void Add(TKey key)
     {
-        if (_root is null)
-            _root = new BtNode<TKey>(key);
+        if (Root is null)
+            Root = new BtNode<TKey>(key);
         else
-            Add(_root, key);
+            Add(Root, key);
 
         Count++;
     }
@@ -80,7 +78,7 @@ public class BTree<TKey>
     /// <returns>The node with the specified key if it exists, otherwise a default value is returned.</returns>
     public BtNode<TKey>? Search(TKey key)
     {
-        return Search(_root, key);
+        return Search(Root, key);
     }
 
     /// <summary>
@@ -90,7 +88,7 @@ public class BTree<TKey>
     /// <returns>true if the key is in the BST, false otherwise.</returns>
     public bool Contains(TKey key)
     {
-        return Search(_root, key) is not null;
+        return Search(Root, key) is not null;
     }
 
     /// <summary>
@@ -100,9 +98,9 @@ public class BTree<TKey>
     /// <returns>true if the removal was successful, false otherwise.</returns>
     public bool Remove(TKey key)
     {
-        if (_root is null) return false;
+        if (Root is null) return false;
 
-        var result = Remove(_root, _root, key);
+        var result = Remove(Root, Root, key);
         if (result) Count--;
 
         return result;
@@ -114,7 +112,7 @@ public class BTree<TKey>
     /// <returns>The node if possible, a default value otherwise.</returns>
     public BtNode<TKey>? GetMin()
     {
-        return _root is null ? default : GetMin(_root);
+        return Root is null ? default : GetMin(Root);
     }
 
     /// <summary>
@@ -123,7 +121,7 @@ public class BTree<TKey>
     /// <returns>The node if possible, a default value otherwise.</returns>
     public BtNode<TKey>? GetMax()
     {
-        return _root is null ? default : GetMax(_root);
+        return Root is null ? default : GetMax(Root);
     }
 
     /// <summary>
@@ -132,7 +130,7 @@ public class BTree<TKey>
     /// <returns>A list of keys in the BST.</returns>
     public ICollection<TKey> GetKeysInOrder()
     {
-        return GetKeysInOrder(_root);
+        return GetKeysInOrder(Root);
     }
 
     /// <summary>
@@ -141,7 +139,7 @@ public class BTree<TKey>
     /// <returns>A list of keys in the BST.</returns>
     public ICollection<TKey> GetKeysPreOrder()
     {
-        return GetKeysPreOrder(_root);
+        return GetKeysPreOrder(Root);
     }
 
     /// <summary>
@@ -150,7 +148,7 @@ public class BTree<TKey>
     /// <returns>A list of keys in the BST.</returns>
     public ICollection<TKey> GetKeysPostOrder()
     {
-        return GetKeysPostOrder(_root);
+        return GetKeysPostOrder(Root);
     }
 
     /// <summary>
@@ -241,7 +239,7 @@ public class BTree<TKey>
         {
             var predecessorNode = GetMax(node.Left);
 
-            Remove(_root, _root, predecessorNode.Key);
+            Remove(Root, Root, predecessorNode.Key);
 
             replacementNode = new BtNode<TKey>(predecessorNode.Key)
             {
@@ -252,8 +250,8 @@ public class BTree<TKey>
 
         // Replace the relevant node with a replacement found in the previous stages.
         // Special case for replacing the root node.
-        if (node == _root)
-            _root = replacementNode;
+        if (node == Root)
+            Root = replacementNode;
         else if (parent.Left == node)
             parent.Left = replacementNode;
         else
@@ -311,7 +309,7 @@ public class BTree<TKey>
     {
         if (node is null) return new List<TKey>();
 
-        var result = new List<TKey> {node.Key};
+        var result = new List<TKey> { node.Key };
 
         result.AddRange(GetKeysPreOrder(node.Left));
         result.AddRange(GetKeysPreOrder(node.Right));

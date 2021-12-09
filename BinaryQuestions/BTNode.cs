@@ -7,28 +7,15 @@ public class BtNode
     private BtNode? _noNode;
     private BtNode? _yesNode;
 
-    /**
-         * Constructor for the nodes: This class holds an String representing 
-         * an object if the noNode and yesNode are null and a question if the
-         * yesNode and noNode point to a BTNode.
-         */
+    /* Constructor for the nodes: This class holds an String representing 
+    an object if the noNode and yesNode are null and a question if the
+    yesNode and noNode point to a BTNode. */
+
     public BtNode(string? nodeMessage)
     {
         _message = nodeMessage;
         _noNode = null;
         _yesNode = null;
-    }
-
-    public int GetEvaluation()
-    {
-        var evaluation = 0;
-        char[] messageCharacters = _message.ToCharArray();
-
-        foreach (var character in messageCharacters)
-            if (char.IsLetter(character))
-                evaluation++;
-
-        return evaluation;
     }
 
 
@@ -76,7 +63,8 @@ public class BtNode
         Console.Write("Please enter a question to distinguish a(n) "
                       + _message + " from " + userObject + ": ");
         var userQuestion = Console.ReadLine();
-        Console.Write("If you were thinking of a(n) " + userObject + ", what would the answer to that question be (\'yes\' or \'no\')? ");
+        Console.Write("If you were thinking of a(n) " + userObject +
+                      ", what would the answer to that question be (\'yes\' or \'no\')? ");
         var input = GetYesOrNo(); //y or n
         if (input == 'y')
         {

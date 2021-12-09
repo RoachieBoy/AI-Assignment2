@@ -13,10 +13,7 @@ public static class InputHandler
     {
         var input = Console.ReadLine();
 
-        if (!string.IsNullOrEmpty(input))
-        {
-            return input;
-        }
+        if (!string.IsNullOrEmpty(input)) return input;
 
         Console.WriteLine("That is not a valid input, try again!");
 

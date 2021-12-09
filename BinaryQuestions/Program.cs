@@ -14,7 +14,9 @@ internal static class Program
             PrintOrder();
         }
         else
+        {
             StartNewGame();
+        }
 
         Console.WriteLine("\nStarting the \"20 Binary Questions\" Game!\nThink of an object, person or animal.");
 
@@ -46,7 +48,7 @@ internal static class Program
     }
 
     /// <summary>
-    ///     Access the pre order 
+    ///     Access the pre order
     /// </summary>
     /// <param name="node"> current binary tree node </param>
     private static void PrintPreOrder(BtNode? node)
@@ -59,83 +61,66 @@ internal static class Program
         }
 
         if (node?.GetNoNode() != null)
-        {
             if (!PassedNodes.Contains(node.GetNoNode()))
             {
                 PassedNodes.Add(node.GetNoNode());
                 Console.WriteLine(node.GetNoNode()?.GetMessage());
                 PrintPreOrder(node.GetNoNode());
             }
-        }
 
         if (node?.GetYesNode() == null) return;
-            
+
         if (PassedNodes.Contains(node.GetYesNode())) return;
-            
+
         PassedNodes.Add(node.GetYesNode());
-            
+
         Console.WriteLine(node.GetYesNode()?.GetMessage());
-            
+
         PrintPreOrder(node.GetYesNode());
     }
-        
+
     /// <summary>
-    ///     Access the in order 
+    ///     Access the in order
     /// </summary>
     /// <param name="node"> current node in the tree </param>
     private static void PrintInOrder(BtNode? node)
     {
         if (node?.GetNoNode() != null)
-        {
             if (!PassedNodes.Contains(node.GetNoNode()))
-            {
                 PrintInOrder(node.GetNoNode());
-            }
-        }
 
         if (!PassedNodes.Contains(node))
         {
             PassedNodes.Add(node);
-            Console.WriteLine(node?.GetMessage() + ", Evaluation = " + node?.GetEvaluation());
+            Console.WriteLine(node?.GetMessage() + ", Evaluation = " + node.GetMessage().Length);
             PrintInOrder(node);
         }
 
         if (node?.GetYesNode() == null) return;
-            
-        if (!PassedNodes.Contains(node.GetYesNode()))
-        {
-            PrintInOrder(node.GetYesNode());
-        }
+
+        if (!PassedNodes.Contains(node.GetYesNode())) PrintInOrder(node.GetYesNode());
     }
 
     /// <summary>
-    ///     Access the post order 
+    ///     Access the post order
     /// </summary>
     /// <param name="node"> current node in the tree </param>
     private static void PrintPostOrder(BtNode? node)
     {
         if (node?.GetNoNode() != null)
-        {
             if (!PassedNodes.Contains(node.GetNoNode()))
-            {
                 PrintPostOrder(node.GetNoNode());
-            }
-        }
 
         if (node?.GetYesNode() != null)
-        {
             if (!PassedNodes.Contains(node.GetYesNode()))
-            {
                 PrintPostOrder(node.GetYesNode());
-            }
-        }
 
         if (!PassedNodes.Contains(node))
         {
             PassedNodes.Add(node);
-                
+
             Console.WriteLine(node?.GetMessage());
-                
+
             PrintPostOrder(node);
         }
     }

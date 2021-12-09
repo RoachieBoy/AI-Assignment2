@@ -21,7 +21,7 @@ internal class BtTree
 
         using var stream = File.OpenRead("serialized.bin");
 
-        GetRootNode = (BtNode) formatter.Deserialize(stream);
+        GetRootNode = (BtNode)formatter.Deserialize(stream);
     }
 
     public BtNode? GetRootNode { get; }

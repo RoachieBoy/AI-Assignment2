@@ -5,7 +5,7 @@ namespace BinaryQuestionsV2;
 
 public class Game
 {
-    private BTree<string> _currentGameData;
+    private readonly BTree<string> _currentGameData;
 
     public Game(BTree<string> currentGameData)
     {
@@ -30,12 +30,17 @@ public class Game
 
         var userQuestion = InputHandler.InputChecker();
 
-        Console.WriteLine("What should the follow-up question be: ");
+        Console.WriteLine("What should the follow-up question for no be: ");
 
-        var userQuestionDefiner = InputHandler.InputChecker();
+        var userQuestionNo = InputHandler.InputChecker();
+
+        Console.WriteLine("What should the follow-up question for yes be: ");
+
+        var userQuestionYes = InputHandler.InputChecker();
 
         _currentGameData.Add(userQuestion);
-        _currentGameData.Add(userQuestionDefiner);
+        _currentGameData.Add(userQuestionNo);
+        _currentGameData.Add(userQuestionYes);
     }
 
     private void RunQuery(BtNode<string>? node)
@@ -47,30 +52,18 @@ public class Game
         else
         {
             Console.WriteLine(node.Key + "\n\n Yes 'y' or no 'n': ");
-            
+
             if (node.Left is not null && node.Right is not null)
             {
-                if (InputHandler.CheckInput(ConsoleKey.Y))
-                {
-                    RunQuery(node.Right!);
-                }
+                if (InputHandler.CheckInput(ConsoleKey.Y)) RunQuery(node.Right!);
 
-                if (InputHandler.CheckInput(ConsoleKey.N))
-                {
-                    RunQuery(node.Left!);
-                }
+                if (InputHandler.CheckInput(ConsoleKey.N)) RunQuery(node.Left!);
             }
             else
             {
-                if (InputHandler.CheckInput(ConsoleKey.Y))
-                {
-                    Console.WriteLine("I win!");
-                }
+                if (InputHandler.CheckInput(ConsoleKey.Y)) Console.WriteLine("I win!");
 
-                if (InputHandler.CheckInput(ConsoleKey.N))
-                {
-                    Console.WriteLine("Yeet 2");
-                }
+                if (InputHandler.CheckInput(ConsoleKey.N)) Console.WriteLine("You win!");
             }
         }
     }
