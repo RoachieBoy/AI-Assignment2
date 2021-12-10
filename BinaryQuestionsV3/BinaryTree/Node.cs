@@ -2,7 +2,7 @@ namespace BinaryQuestionsV3.BinaryTree;
 
 public class Node<T>
 {
-    public Node(T data, Node<T>? left, Node<T>? right)
+    public Node(T data, Node<T>? left = null, Node<T>? right = null)
     {
         Data = data;
         Left = left;
