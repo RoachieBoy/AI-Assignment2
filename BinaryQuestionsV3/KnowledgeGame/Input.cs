@@ -15,10 +15,7 @@ public static class Input
 
             if (InputCheckN(input)) return false;
 
-            if (InputCheckX(input))
-            {
-                GameManager.TerminateGame();
-            }
+            if (InputCheckX(input)) GameManager.TerminateGame();
         }
     }
 

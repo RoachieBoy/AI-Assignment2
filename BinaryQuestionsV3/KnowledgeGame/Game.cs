@@ -2,15 +2,22 @@ using BinaryQuestionsV3.BinaryTree;
 
 namespace BinaryQuestionsV3.KnowledgeGame;
 
+/// <summary>
+/// </summary>
 public class Game
 {
     private Tree<string>? _currentGameData;
 
+    /// <summary>
+    /// </summary>
     public Game()
     {
         _currentGameData = null;
     }
 
+    /// <summary>
+    /// </summary>
+    /// <param name="currentGameData"></param>
     public Game(Tree<string> currentGameData)
     {
         _currentGameData = currentGameData;
@@ -18,17 +25,15 @@ public class Game
 
     private static Tree<string> CreateNewGame()
     {
-        Console.WriteLine("It seems there isn't any previous data...\nLet's start creating some!" +
+        Console.WriteLine("It seems there isn't any previous data..." +
+                          "\nLet's start creating some!" +
                           "\nWhat should the first question be: ");
-
         var firstQuestion = Input.TryGetInput();
 
         Console.WriteLine("What should the first (yes) possibility be: ");
-
         var leftNode = new Node<string>(Input.TryGetInput());
 
         Console.WriteLine("What should the second (no) possibility be: ");
-
         var rightNode = new Node<string>(Input.TryGetInput());
 
         var rootNode = new Node<string>(firstQuestion, leftNode, rightNode);
@@ -40,6 +45,7 @@ public class Game
 
     public void Run()
     {
+        // Check for game data
         if (_currentGameData is null)
         {
             _currentGameData = CreateNewGame();
@@ -48,7 +54,6 @@ public class Game
         }
         else
         {
-            // Write game logic once the game is running
             Query(_currentGameData.Root);
         }
     }
@@ -56,7 +61,7 @@ public class Game
     private void Query(Node<string> node, int number = 1)
     {
         Console.WriteLine($"Question {number}: {node.Data} \nPlease answer with 'y' yes or 'n' no!");
-
+        // Check whether the node is a leaf node or not
         if (node.Left is not null && node.Right is not null)
         {
             if (Input.CheckYesOrNo())
@@ -66,6 +71,7 @@ public class Game
         }
         else if (node.Left is null && node.Right is null)
         {
+            // Leaf node endgame sequence
             if (Input.CheckYesOrNo())
             {
                 Console.WriteLine("I win!");
@@ -75,7 +81,7 @@ public class Game
             else
             {
                 Console.WriteLine("You win!");
-
+                // Request rebase knowledge database
                 AddKnowledgeOnLoss(node);
             }
         }
@@ -83,19 +89,21 @@ public class Game
 
     private void AddKnowledgeOnLoss(Node<string> node)
     {
-        Console.WriteLine("What should the question to specify be: ");
+        Console.WriteLine("What should the question to specify for a different answer be: ");
         var specifyMeDaddy = Input.TryGetInput();
-
-        var oldQuestion = node.Data;
+        // Data switch a roo to replace old question with the new specifying one
+        var firstPossibility = node.Data;
         node.Data = specifyMeDaddy;
 
         Console.WriteLine("What should the second (no) possibility be: ");
         var secondPossibility = Input.TryGetInput();
-
-        node.Left = new Node<string>(oldQuestion);
+        // Create new nodes to contain the possibilities
+        node.Left = new Node<string>(firstPossibility);
         node.Right = new Node<string>(secondPossibility);
 
-        Console.WriteLine($"Question: {node.Data} \nAnswer one: {node.Left.Data} \nAnswer two: {node.Right.Data}" +
+        Console.WriteLine($"Question: {node.Data} " +
+                          $"\nAnswer one: {node.Left.Data} " +
+                          $"\nAnswer two: {node.Right.Data}" +
                           "\nThank you for your addition!");
 
         PlayAgain();

@@ -30,16 +30,18 @@ public static class GameManager
     public static void QuitGame(Tree<string> currentGameData)
     {
         Console.WriteLine("Saving game...");
-        
+
         SaveManager.SaveData(currentGameData);
-        
+
         TerminateGame();
     }
 
+    /// <summary>
+    /// </summary>
     public static void TerminateGame()
     {
         Console.WriteLine("Exiting game...");
-        
+
         Environment.Exit(0);
     }
 }
