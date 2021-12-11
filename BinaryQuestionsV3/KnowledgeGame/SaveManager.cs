@@ -4,19 +4,19 @@ using BinaryQuestionsV3.BinaryTree;
 namespace BinaryQuestionsV3.KnowledgeGame;
 
 /// <summary>
-/// This class manages the saving and loading of game data <see cref="Tree{T}"/>'s.
+///     This class manages the saving and loading of game data <see cref="Tree{T}" />'s.
 /// </summary>
 public static class SaveManager
 {
     private const string FileName = "gameData.json";
 
     /// <summary>
-    /// Tries to load the game data <see cref="Tree{T}"/>.
+    ///     Tries to load the game data <see cref="Tree{T}" />.
     /// </summary>
-    /// <param name="gameData"> The game data <see cref="Tree{T}"/> to fill. </param>
+    /// <param name="gameData"> The game data <see cref="Tree{T}" /> to fill. </param>
     /// <returns> Returns true when it can load the data, false otherwise. </returns>
     /// <exception cref="InvalidOperationException">
-    /// The exception containing what part of the loading failed.
+    ///     The exception containing what part of the loading failed.
     /// </exception>
     public static bool LoadData(out Tree<string>? gameData)
     {
@@ -44,9 +44,9 @@ public static class SaveManager
     }
 
     /// <summary>
-    /// Saves the given game data <see cref="Tree{T}"/> to a json.
+    ///     Saves the given game data <see cref="Tree{T}" /> to a json.
     /// </summary>
-    /// <param name="gameData"> The game data <see cref="Tree{T}"/> to serialize. </param>
+    /// <param name="gameData"> The game data <see cref="Tree{T}" /> to serialize. </param>
     public static void SaveData(Tree<string> gameData)
     {
         var options = new JsonSerializerOptions { WriteIndented = true, IncludeFields = true };

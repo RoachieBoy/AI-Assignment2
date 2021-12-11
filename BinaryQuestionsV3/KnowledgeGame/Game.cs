@@ -3,14 +3,14 @@ using BinaryQuestionsV3.BinaryTree;
 namespace BinaryQuestionsV3.KnowledgeGame;
 
 /// <summary>
-/// This class defines the <see cref="Game"/> behaviour.
+///     This class defines the <see cref="Game" /> behaviour.
 /// </summary>
 public class Game
 {
     private Tree<string>? _currentGameData;
 
     /// <summary>
-    /// Instantiates a new empty <see cref="Game"/>.
+    ///     Instantiates a new empty <see cref="Game" />.
     /// </summary>
     public Game()
     {
@@ -18,9 +18,9 @@ public class Game
     }
 
     /// <summary>
-    /// Instantiates a new <see cref="Game"/> with existing data (stored in a <see cref="Tree{T}"/>).
+    ///     Instantiates a new <see cref="Game" /> with existing data (stored in a <see cref="Tree{T}" />).
     /// </summary>
-    /// <param name="gameData"> Game data <see cref="Tree{T}"/> to use when instantiating. </param>
+    /// <param name="gameData"> Game data <see cref="Tree{T}" /> to use when instantiating. </param>
     public Game(Tree<string> gameData)
     {
         _currentGameData = gameData;
@@ -46,7 +46,7 @@ public class Game
     }
 
     /// <summary>
-    /// Starts the <see cref="Game"/>.
+    ///     Starts the <see cref="Game" />.
     /// </summary>
     public void Run()
     {
@@ -63,9 +63,9 @@ public class Game
                 _currentGameData.Root, int.MaxValue, true);
             var alphaBeta = ExtraFunctions.AlphaBetaPruningEval(
                 _currentGameData.Root, int.MaxValue, int.MinValue, int.MaxValue, true);
-            
+
             Console.WriteLine($"Mini-max: {minMax} & alpha-beta: {alphaBeta}");
-            
+
             Query(_currentGameData.Root);
         }
     }

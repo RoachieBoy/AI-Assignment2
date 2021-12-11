@@ -8,9 +8,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Update="gameData.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+        <None Update="gameData.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
 </Project>

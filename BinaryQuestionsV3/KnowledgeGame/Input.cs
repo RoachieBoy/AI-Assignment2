@@ -1,12 +1,12 @@
 namespace BinaryQuestionsV3.KnowledgeGame;
 
 /// <summary>
-/// This class handles all input.
+///     This class handles all input.
 /// </summary>
 public static class Input
 {
     /// <summary>
-    /// Checks the input for being a yes, no or to terminate
+    ///     Checks the input for being a yes, no or to terminate
     /// </summary>
     /// <returns> Returns true when reading 'y' and false when reading 'n'. </returns>
     public static bool CheckYesOrNo()
@@ -23,24 +23,24 @@ public static class Input
             if (InputCheckX(input)) GameManager.TerminateGame();
         }
     }
-    
+
     private static bool InputCheckY(string input)
     {
         return input == "y";
     }
-    
+
     private static bool InputCheckN(string input)
     {
         return input == "n";
     }
-    
+
     private static bool InputCheckX(string input)
     {
         return input == "x";
     }
 
     /// <summary>
-    /// Tries to get a valid input until.
+    ///     Tries to get a valid input until.
     /// </summary>
     /// <returns> Returns the console input as a string, cannot be empty or null. </returns>
     public static string TryGetInput()
