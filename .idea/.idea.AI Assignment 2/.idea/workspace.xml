@@ -9,12 +9,18 @@
     <projectFile>BinaryQuestionsV3/BinaryQuestionsV3.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6078694a-76d5-4eb6-bb38-50654e9ece11" name="Changes" comment="">
+    <list default="true" id="6078694a-76d5-4eb6-bb38-50654e9ece11" name="Changes" comment="Save and load system works nowww">
+      <change afterPath="$PROJECT_DIR$/BinaryQuestionsV3/gameData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AI Assignment 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AI Assignment 2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryQuestionsV3.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryQuestionsV3.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryTree/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryTree/Node.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryTree/Tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryTree/Tree.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/ExtraFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/ExtraFunctions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/Input.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/SaveManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +41,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63e5fabb426c406cb30992dab6a9175131a00/b1/6f8e5886/Console.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/916979beb1e5bde54b993fed17d9878fdedcbcf485ce4e7d695327257736c99/Comparer.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/winand/Repositories/AI-Assignment2/BinaryQuestionsV3/KnowledgeGame/Game.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7fe79a50e72b83d86bcb87e6e177c55c4e64595e94e8591a17f6ec586ffc9f71/Interop.IOErrors.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -136,7 +143,7 @@
       <workItem from="1639138141043" duration="1241000" />
       <workItem from="1639161004205" duration="5390000" />
       <workItem from="1639172978589" duration="1808000" />
-      <workItem from="1639220077533" duration="2890000" />
+      <workItem from="1639220077533" duration="10853000" />
     </task>
     <task id="LOCAL-00001" summary="New type agnostic Tree and Nodes &#10;&#10;Based on: https://github.com/TheAlgorithms/C-Sharp">
       <created>1638201882761</created>
@@ -180,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639174783565</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Save and load system works nowww">
+      <created>1639223289639</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639223289639</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +223,7 @@
     <MESSAGE value="Hmhm" />
     <MESSAGE value="Trying again, attempt V3, but entirely self-written lmao" />
     <MESSAGE value="Almost done... Only save system needs to be implemented pretty much..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Almost done... Only save system needs to be implemented pretty much..." />
+    <MESSAGE value="Save and load system works nowww" />
+    <option name="LAST_COMMIT_MESSAGE" value="Save and load system works nowww" />
   </component>
 </project>

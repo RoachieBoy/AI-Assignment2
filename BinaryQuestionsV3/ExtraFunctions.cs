@@ -3,15 +3,17 @@ using BinaryQuestionsV3.BinaryTree;
 namespace BinaryQuestionsV3;
 
 /// <summary>
+/// This class holds the functions which are discussed in questions 5 till 7.
 /// </summary>
 public static class ExtraFunctions
 {
     /// <summary>
+    /// Recursive mini-max function.
     /// </summary>
-    /// <param name="node"></param>
-    /// <param name="depth"></param>
-    /// <param name="maxPlayer"></param>
-    /// <returns></returns>
+    /// <param name="node"> <see cref="Node{T}"/> at which the algorithm should start. </param>
+    /// <param name="depth"> Max depth to calculate a min-max evaluation of. </param>
+    /// <param name="maxPlayer"> Whether the start <see cref="Node{T}"/> is max- or minimized. </param>
+    /// <returns> Returns the evaluation of the <see cref="Tree{T}"/>. </returns>
     public static int MiniMaxEval(Node<string>? node, int depth, bool maxPlayer)
     {
         if (node is null) return 0;
@@ -38,13 +40,14 @@ public static class ExtraFunctions
     }
 
     /// <summary>
+    /// Recursive fail-hard alpha-beta pruning function.
     /// </summary>
-    /// <param name="node"></param>
-    /// <param name="depth"></param>
-    /// <param name="alpha"></param>
-    /// <param name="beta"></param>
-    /// <param name="maxPlayer"></param>
-    /// <returns></returns>
+    /// <param name="node"> <see cref="Node{T}"/> at which the algorithm should start. </param>
+    /// <param name="depth"> Max depth to calculate a alpha-beta evaluation of </param>
+    /// <param name="alpha"> Lower (alpha) limit of the evaluation. </param>
+    /// <param name="beta"> Higher (beta) limit of the evaluation. </param>
+    /// <param name="maxPlayer"> Whether the start <see cref="Node{T}"/> is max- or minimized. </param>
+    /// <returns> Returns the evaluation of the <see cref="Tree{T}"/>. </returns>
     public static int AlphaBetaPruningEval(Node<string>? node, int depth, int alpha, int beta, bool maxPlayer)
     {
         var output = 0;

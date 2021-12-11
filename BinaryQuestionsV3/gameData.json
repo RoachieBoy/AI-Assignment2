@@ -1,0 +1,23 @@
+{
+  "Root": {
+    "Data": "Can it swim?",
+    "Left": {
+      "Data": "Can it breath underwater?",
+      "Left": {
+        "Data": "Is it a fish?",
+        "Left": null,
+        "Right": null
+      },
+      "Right": {
+        "Data": "Is it a dolphin?",
+        "Left": null,
+        "Right": null
+      }
+    },
+    "Right": {
+      "Data": "Is it a bird?",
+      "Left": null,
+      "Right": null
+    }
+  }
+}

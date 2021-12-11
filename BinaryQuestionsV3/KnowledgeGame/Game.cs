@@ -3,12 +3,14 @@ using BinaryQuestionsV3.BinaryTree;
 namespace BinaryQuestionsV3.KnowledgeGame;
 
 /// <summary>
+/// This class defines the <see cref="Game"/> behaviour.
 /// </summary>
 public class Game
 {
     private Tree<string>? _currentGameData;
 
     /// <summary>
+    /// Instantiates a new empty <see cref="Game"/>.
     /// </summary>
     public Game()
     {
@@ -16,20 +18,22 @@ public class Game
     }
 
     /// <summary>
+    /// Instantiates a new <see cref="Game"/> with existing data (stored in a <see cref="Tree{T}"/>).
     /// </summary>
-    /// <param name="currentGameData"></param>
-    public Game(Tree<string> currentGameData)
+    /// <param name="gameData"> Game data <see cref="Tree{T}"/> to use when instantiating. </param>
+    public Game(Tree<string> gameData)
     {
-        _currentGameData = currentGameData;
+        _currentGameData = gameData;
     }
 
-    private static Tree<string> CreateNewGame()
+    private static Tree<string> CreateGameDataStructure()
     {
+        // Start with creating a root node
         Console.WriteLine("It seems there isn't any previous data..." +
                           "\nLet's start creating some!" +
                           "\nWhat should the first question be: ");
         var firstQuestion = Input.TryGetInput();
-
+        // Make sure to also fill the left and right child
         Console.WriteLine("What should the first (yes) possibility be: ");
         var leftNode = new Node<string>(Input.TryGetInput());
 
@@ -37,18 +41,19 @@ public class Game
         var rightNode = new Node<string>(Input.TryGetInput());
 
         var rootNode = new Node<string>(firstQuestion, leftNode, rightNode);
-
-        var tree = new Tree<string>(rootNode);
-
-        return tree;
+        // Instantiate tree with the root node
+        return new Tree<string>(rootNode);
     }
 
+    /// <summary>
+    /// Starts the <see cref="Game"/>.
+    /// </summary>
     public void Run()
     {
         // Check for game data
         if (_currentGameData is null)
         {
-            _currentGameData = CreateNewGame();
+            _currentGameData = CreateGameDataStructure();
 
             Query(_currentGameData.Root);
         }
@@ -97,7 +102,7 @@ public class Game
 
         Console.WriteLine("What should the second (no) possibility be: ");
         var secondPossibility = Input.TryGetInput();
-        // Create new nodes to contain the possibilities
+        // Create new nodes and fill the children to contain the possibilities
         node.Left = new Node<string>(firstPossibility);
         node.Right = new Node<string>(secondPossibility);
 
