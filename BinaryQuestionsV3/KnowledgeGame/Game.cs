@@ -59,6 +59,13 @@ public class Game
         }
         else
         {
+            var minMax = ExtraFunctions.MiniMaxEval(
+                _currentGameData.Root, int.MaxValue, true);
+            var alphaBeta = ExtraFunctions.AlphaBetaPruningEval(
+                _currentGameData.Root, int.MaxValue, int.MinValue, int.MaxValue, true);
+            
+            Console.WriteLine($"Mini-max: {minMax} & alpha-beta: {alphaBeta}");
+            
             Query(_currentGameData.Root);
         }
     }

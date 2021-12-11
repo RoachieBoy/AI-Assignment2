@@ -26,7 +26,7 @@ public static class ExtraFunctions
             {
                 var left = MiniMaxEval(node.Left, depth - 1, false);
                 var right = MiniMaxEval(node.Right, depth - 1, false);
-
+                
                 return left > right ? left : right;
             }
             case false:
@@ -61,7 +61,7 @@ public static class ExtraFunctions
             case true:
             {
                 var left = AlphaBetaPruningEval(node.Left, depth - 1, alpha, beta, false);
-
+                
                 alpha = left > alpha ? left : alpha;
 
                 if (left >= beta) break;

@@ -9,18 +9,9 @@
     <projectFile>BinaryQuestionsV3/BinaryQuestionsV3.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6078694a-76d5-4eb6-bb38-50654e9ece11" name="Changes" comment="Save and load system works nowww">
-      <change afterPath="$PROJECT_DIR$/BinaryQuestionsV3/gameData.json" afterDir="false" />
+    <list default="true" id="6078694a-76d5-4eb6-bb38-50654e9ece11" name="Changes" comment="Okay everything has base comments now">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AI Assignment 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AI Assignment 2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryQuestionsV3.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryQuestionsV3.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryTree/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryTree/Node.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryTree/Tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/BinaryTree/Tree.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/ExtraFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/ExtraFunctions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/Input.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/KnowledgeGame/SaveManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryQuestionsV3/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryQuestionsV3/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +134,7 @@
       <workItem from="1639138141043" duration="1241000" />
       <workItem from="1639161004205" duration="5390000" />
       <workItem from="1639172978589" duration="1808000" />
-      <workItem from="1639220077533" duration="10853000" />
+      <workItem from="1639220077533" duration="11271000" />
     </task>
     <task id="LOCAL-00001" summary="New type agnostic Tree and Nodes &#10;&#10;Based on: https://github.com/TheAlgorithms/C-Sharp">
       <created>1638201882761</created>
@@ -194,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639223289639</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Okay everything has base comments now">
+      <created>1639231629723</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1639231629723</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +222,7 @@
     <MESSAGE value="Trying again, attempt V3, but entirely self-written lmao" />
     <MESSAGE value="Almost done... Only save system needs to be implemented pretty much..." />
     <MESSAGE value="Save and load system works nowww" />
-    <option name="LAST_COMMIT_MESSAGE" value="Save and load system works nowww" />
+    <MESSAGE value="Okay everything has base comments now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Okay everything has base comments now" />
   </component>
 </project>
